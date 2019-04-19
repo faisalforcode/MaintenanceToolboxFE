@@ -1,0 +1,22 @@
+<div *ngIf="metadata" class="cardDiv">
+  <mat-card class="example-card" value="Click" (click) ="goToRoute()">   
+    <mat-card-title-group>
+      <mat-card-title>{{metadata.volumeTitle}}</mat-card-title>
+      <div *ngIf="(metadata.volumeType === 'PDF')">
+        <mat-icon>picture_as_pdf</mat-icon>
+      </div>
+      <div *ngIf="(metadata.volumeType === 'MP4')">
+          <mat-icon>video_library</mat-icon>
+      </div>
+      <div *ngIf="(metadata.volumeType === 'MP3')">
+          <mat-icon>audiotrack</mat-icon>
+      </div>
+    </mat-card-title-group>
+
+    <mat-card-header>
+      <mat-card-subtitle>
+        {{metadata.volumeNumber}}&emsp;{{metadata.applicability}}&emsp;{{metadata.volumeType}}&emsp;{{metadata.issuedDate}}&emsp;{{metadata.model}}&emsp;{{metadata.variant}}
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>

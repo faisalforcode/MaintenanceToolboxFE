@@ -1,0 +1,19 @@
+.example-card {
+    width: 50%;
+    margin: 4px;
+    max-height: 80px;
+}
+
+.cardDiv {
+    align-self: center;
+}
+
+.mat-card-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mat-card-subtitle {
+    color: rgb(0, 0, 0);
+}
+

@@ -1,0 +1,12 @@
+ .example-container {
+   flex-direction: column;
+   padding-top: 50px;
+ }
+ 
+ .example-container > * {
+   width: 50%;
+ }
+
+ .ngfordiv {
+  text-align: -webkit-center;
+ }
