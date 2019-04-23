@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-audio',
@@ -7,11 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./audio.component.css']
 })
 export class AudioComponent implements OnInit {
-  msbapTitle = 'Audio Title';
-  msbapAudioUrl = 'Link to audio URL';   
-   
-msbapDisplayTitle = false; 
-  constructor() { }
+  filePath: string;
+  msbapTitle = 'Audio Manual';
+  msbapAudioUrl = 'Not Found';
+  msbapDisplayTitle = true;
+
   ngOnInit() {
+  }
+  constructor(private route: ActivatedRoute) {
+
+    this.route.params.subscribe(params => {
+      console.log(params);
+      if (params["fileName"]) {
+        this.filePath = "../assets/" + params["fileName"];
+        this.msbapAudioUrl = this.filePath;
+        console.log(this.filePath);
+      }
+    });
   }
 }

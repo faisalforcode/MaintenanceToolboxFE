@@ -20,16 +20,19 @@ export class ResultCardComponent implements OnInit {
   constructor(_router: Router) {
     this.router = _router;
   }
-
+  
   goToRoute() {
     if (this.metadata.volumeType === 'PDF') {
-      this.router.navigateByUrl('/displayMedia');
+      var myPdfUrl = `/pdf/${this.metadata.contentFileName}`;
+      this.router.navigateByUrl(myPdfUrl);
     }
     else if (this.metadata.volumeType === 'MP3') {
-      this.router.navigateByUrl('/audio');
+      var myAudioUrl = `/audio/${this.metadata.contentFileName}`;
+      this.router.navigateByUrl(myAudioUrl);
     }
     else if (this.metadata.volumeType === 'MP4') {
-      this.router.navigateByUrl('/video');
+      var myVideoUrl = `/video/${this.metadata.contentFileName}`;
+      this.router.navigateByUrl(myVideoUrl);
     }
 
   }

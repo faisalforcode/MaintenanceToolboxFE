@@ -12,9 +12,9 @@ const routes: Routes = [
   { path: 'status', component: TestEsComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'displayMedia', component: DocDisplayComponent },
-  { path: 'audio', component: AudioComponent },
-  { path: 'video', component: VideoComponent },
+  { path: 'pdf/:fileName', component: DocDisplayComponent },
+  { path: 'audio/:fileName', component: AudioComponent },
+  { path: 'video/:fileName', component: VideoComponent },
   { path: '', component: LandingPageComponent }
 ];
 
